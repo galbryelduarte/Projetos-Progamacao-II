@@ -2,11 +2,11 @@ package Coisa;
 
 public class Descanso {
     /**
-     * a variavél horasDescanso representa as horas de descanso do estudante registradas.
+     * representa as horas de descanso do estudante registradas;
      */
     int horasDescanso;
     /**
-     * a variavél numeroSemanas representa a quantidade de semanas consideradas no calculo
+     * representa a quantidade de semanas consideradas no calculo;
      */
     int numeroSemanas;
 
@@ -19,7 +19,7 @@ public class Descanso {
     }
 
     /**
-     * Recebe um inteiro e o usa pra atualizar os numeros de semana nela.
+     * Recebe um inteiro e o usa pra atualizar os numeros de semana nela;
      * @param valor inteiro que será usado pra atualizar o numero de semanas;
      */
     public void defineNumeroSemanas(int valor) {

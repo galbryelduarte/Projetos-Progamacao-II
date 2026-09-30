@@ -40,7 +40,7 @@ public class Disciplina {
     }
 
     /**
-     * método que verifica se a media do estudante é o bastante para aprovação;
+     * metodo que verifica se a media do estudante é o bastante para aprovação;
      * @return true se for maior igual a 7 ou false se não for;
      */
     public boolean aprovado() {
@@ -52,10 +52,10 @@ public class Disciplina {
     }
 
     /**
-     * método que transforma as informações do objeto como nome da disciplina, horas, media e notas em representação String;
+     * metodo que transforma as informações do objeto como nome da disciplina, horas, media e notas em representação String;
      * @return as informações do objeto como String;
      */
     public String toString() {
-        return (this.disciplina + " " + this.horas + " "  + ((nota1+nota2+nota3+nota4)/4) + " [" + nota1 + "," + nota2 + "," + nota3 + "," + nota4 + "]");
+        return (this.disciplina + " " + this.horas + " "  + ((nota1+nota2+nota3+nota4)/4) + " [" + nota1 + ", " + nota2 + ", " + nota3 + ", " + nota4 + "]");
     }
 }
