@@ -54,12 +54,18 @@ public class Coisa {
         for (int i = 0; i < meusResumos.contaResumos(); i++) {
             System.out.println(resumos[i]);
         }
-
         System.out.println();
         System.out.println("Resumos: ");
         System.out.println(meusResumos.imprimeResumos());
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
+        System.out.println();
+        String[] buscadas = meusResumos.busca("CÓDIGO");
+        for (String palavra : buscadas) {
+            if (palavra != null) {
+                System.out.println(palavra);
+            }
+        }
     }
 }
 

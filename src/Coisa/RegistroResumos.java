@@ -97,4 +97,17 @@ public class RegistroResumos {
         return "\n- " + contaResumos() + " resumo(s) cadastrado(s)\n"
                 + "- " + resumos;
     }
+
+    public String[] busca(String chaveDeBusca) {
+        String[] temasBuscados = new String[temas.length];
+        int j = 0;
+        for (int i = 0; i < conteudos.length; i ++) {
+            if (conteudos[i] != null && conteudos[i].toLowerCase().contains(chaveDeBusca.toLowerCase())) {
+                temasBuscados[j] = temas[i];
+                j += 1;
+            }
+        }
+        return temasBuscados;
+    }
+
 }
