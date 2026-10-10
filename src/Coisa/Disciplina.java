@@ -7,13 +7,29 @@ public class Disciplina {
     double nota2;
     double nota3;
     double nota4;
-
+    double[] notas;
+    int[] pesos;
     /**
      * Cria e inicializa o objeto disciplina;
      * @param nomeDisciplina o nome da disciplina;
      */
     public Disciplina (String nomeDisciplina) {
         this.disciplina = nomeDisciplina;
+    }
+
+    public Disciplina (String nome, int numeroNotas) {
+        this.disciplina = nome;
+        this.notas = new double[numeroNotas];
+        this.pesos = new int[numeroNotas];
+        for (int i = 0; i < numeroNotas; i++){
+            this.pesos[i] = 1;
+        }
+    }
+
+    public Disciplina (String nome, int numeroNotas, int[] pesos) {
+        this.disciplina = nome;
+        this.pesos = pesos;
+        this.notas = new double[numeroNotas];
     }
 
     /**
@@ -25,30 +41,60 @@ public class Disciplina {
     }
 
     /**
-     * dado a opção, cadastra as notas no espaço adequado definido pela opção;
+     * dado a opção, cadastra as notas no espaco adequado definido pela opção;
      * @param nota inteiro que define qual nota será alterada;
      * @param valorNota double que representa o valor da nota em si a ser acrescentada;
      */
     public void cadastraNota(int nota, double valorNota) {
-        switch (nota) {
+        if (notas == null) {
+            switch (nota) {
                 case 1 -> nota1 = valorNota;
                 case 2 -> nota2 = valorNota;
                 case 3 -> nota3 = valorNota;
                 case 4 -> nota4 = valorNota;
                 default -> System.out.println("valor inválido");
+            }
         }
+        else if (nota >= 1 && nota <= notas.length){
+            notas[nota-1] = valorNota;
+        }
+        else {
+            System.out.println("valor inválido");
+        }
+    }
+    /**
+     * calcula a media do estudante de acordo com o tipo de disciplina;
+     * @return a media do estudante;
+     */
+    private double calcularMedia() {
+        double media = 0;
+        double total = 0;
+        if (notas == null) {
+            media = (nota1 + nota2 + nota3 + nota4) / 4;
+        }
+        else if (pesos != null) {
+            int somaPesos = 0;
+            for (int i = 0; i < notas.length; i++) {
+                total += notas[i] * pesos[i];
+                somaPesos += pesos[i];
+            }
+            media = total / somaPesos;
+        }
+        else {
+            for (int i = 0; i < notas.length; i++) {
+                total += notas[i];
+            }
+            media = total / notas.length;
+        }
+        return media;
     }
 
     /**
-     * metodo que verifica se a media do estudante é o bastante para aprovação;
-     * @return true se for maior igual a 7 ou false se não for;
+     * verifica se a media do estudante é o suficiente pra aprovação;
+     * @return true ou false dependendo se a nota é maior igual ou menor que 7.0;
      */
     public boolean aprovado() {
-        double media = (nota1 + nota2 + nota3 + nota4) / 4;
-        if (media >= 7.0) {
-            return true;
-        }
-        return false;
+        return calcularMedia() >= 7.0;
     }
 
     /**
@@ -56,6 +102,16 @@ public class Disciplina {
      * @return as informações do objeto como String;
      */
     public String toString() {
-        return (this.disciplina + " " + this.horas + " "  + ((nota1+nota2+nota3+nota4)/4) + " [" + nota1 + ", " + nota2 + ", " + nota3 + ", " + nota4 + "]");
+        if (notas == null) {
+            return (this.disciplina + " " + this.horas + " "  + calcularMedia() + " [" + nota1 + ", " + nota2 + ", " + nota3 + ", " + nota4 + "]");
+        }
+        String listaNotas = " [";
+        for (int i = 0; i < notas.length; i++) {
+            listaNotas += notas[i];
+            if (notas.length-1 > i) {
+                listaNotas += ", ";
+            }
+        }
+        return (this.disciplina + " " + this.horas + " "  + calcularMedia() + listaNotas + "]");
     }
 }

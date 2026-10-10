@@ -1,4 +1,5 @@
 package Coisa;
+
 public class Coisa {
     public static void main(String[] args) {
         registrarDescanso();
@@ -45,7 +46,38 @@ public class Coisa {
         prog2.cadastraNota(4, 10.0);
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
+
+        Disciplina poo = new Disciplina("POO", 3);
+        poo.cadastraHoras(60);
+        poo.cadastraNota(1, 8.0);
+        poo.cadastraNota(2, 9.0);
+        poo.cadastraNota(3, 7.0);
+        System.out.println(poo.aprovado());
+        System.out.println(poo.toString());
+
+        Disciplina calculo = new Disciplina("CALCULO", 2, new int[]{6, 4});
+        calculo.cadastraHoras(80);
+        calculo.cadastraNota(1, 8.0);
+        calculo.cadastraNota(2, 10.0);
+        System.out.println(calculo.aprovado());
+        System.out.println(calculo.toString());
+
+        Disciplina fisica = new Disciplina("FISICA", 2, new int[]{7, 3});
+        fisica.cadastraNota(1, 5.0);
+        fisica.cadastraNota(2, 10.0);
+        System.out.println(fisica.aprovado());
+        System.out.println(fisica.toString());
+
+        Disciplina historia = new Disciplina("HISTORIA", 5);
+        historia.cadastraNota(1, 6.0);
+        historia.cadastraNota(2, 8.0);
+        historia.cadastraNota(3, 9.0);
+        historia.cadastraNota(4, 7.0);
+        historia.cadastraNota(5, 10.0);
+        System.out.println(historia.aprovado());
+        System.out.println(historia.toString());
     }
+
     private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
         meusResumos.adicionaResumo("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
@@ -60,7 +92,7 @@ public class Coisa {
         System.out.println(meusResumos.temResumo("Classes"));
         System.out.println(meusResumos.temResumo("Objetos"));
         System.out.println();
-        String[] buscadas = meusResumos.busca("CÓDIGO");
+        String[] buscadas = meusResumos.busca("um");
         for (String palavra : buscadas) {
             if (palavra != null) {
                 System.out.println(palavra);

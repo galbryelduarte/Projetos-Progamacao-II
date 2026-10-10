@@ -1,4 +1,5 @@
 package Coisa;
+import java.util.ArrayList;
 
 public class RegistroResumos {
     int numero;
@@ -23,7 +24,10 @@ public class RegistroResumos {
      */
     public void adicionaResumo(String tema, String conteudo) {
         for (String i : this.temas) {
-            if (i != null && i.equals(tema)) {
+            if (i == null) {
+                break;
+            }
+            if (i.equals(tema)) {
                 System.out.println("Esse tema já foi acrescentado a lista de resumos");
                 return;
             }
@@ -56,13 +60,12 @@ public class RegistroResumos {
      */
     public int contaResumos() {
         int contador = 0;
-
         for (int i = 0; i < conteudos.length; i++) {
-            if (conteudos[i] != null) {
-                contador++;
+            if (conteudos[i] == null) {
+                break;
             }
+            contador++;
         }
-
         return contador;
     }
 
@@ -73,7 +76,10 @@ public class RegistroResumos {
      */
     public boolean temResumo(String tema) {
         for (String titulo : this.temas) {
-            if (titulo != null && titulo.equals(tema)) {
+            if (titulo == null) {
+                break;
+            }
+            if (titulo.equals(tema)) {
                 return true;
             }
         }
@@ -98,16 +104,23 @@ public class RegistroResumos {
                 + "- " + resumos;
     }
 
+    /**
+     * por intermédio de uma chave de busca, encontra em uma lista as frase que possuem a chave
+     * e adiciona os temas dessas frases a uma nova lista de temas.
+     * @param chaveDeBusca palavra chave que será usada
+     * @return lista de temas encontrados organizados em ordem alfabetica
+     */
     public String[] busca(String chaveDeBusca) {
-        String[] temasBuscados = new String[temas.length];
-        int j = 0;
-        for (int i = 0; i < conteudos.length; i ++) {
-            if (conteudos[i] != null && conteudos[i].toLowerCase().contains(chaveDeBusca.toLowerCase())) {
-                temasBuscados[j] = temas[i];
-                j += 1;
+        ArrayList<String> temasBuscados = new ArrayList<>();
+        for (int i = 0; i < contaResumos(); i++) {
+            if (conteudos[i].toLowerCase().contains(chaveDeBusca.toLowerCase())) {
+                if (!temasBuscados.contains(temas[i])) {
+                    temasBuscados.add(temas[i]);
+                }
             }
         }
-        return temasBuscados;
+        temasBuscados.sort(null);
+        return temasBuscados.toArray(new String[0]);
     }
-
 }
+
