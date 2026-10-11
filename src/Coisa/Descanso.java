@@ -1,34 +1,28 @@
 package Coisa;
 
 public class Descanso {
-    /**
-     * representa as horas de descanso do estudante registradas;
-     */
     int horasDescanso;
-    /**
-     * representa a quantidade de semanas consideradas no calculo;
-     */
     int numeroSemanas;
 
     /**
-     * Recebe um inteiro e o usa pra atualizar as horas de descanso nela;
-     * @param valor inteiro que será usado pra atualizar as horas;
+     * Recebe um inteiro e o usa pra atualizar as horas de descanso nela.
+     * @param valor inteiro que será usado pra atualizar as horas.
      */
     public void defineHorasDescanso(int valor) {
         horasDescanso = valor;
     }
 
     /**
-     * Recebe um inteiro e o usa pra atualizar os numeros de semana nela;
-     * @param valor inteiro que será usado pra atualizar o numero de semanas;
+     * Recebe um inteiro e o usa pra atualizar os numeros de semana nela.
+     * @param valor inteiro que será usado pra atualizar o numero de semanas.
      */
     public void defineNumeroSemanas(int valor) {
         numeroSemanas = valor;
     }
 
     /**
-     * Após o cálculo da média geral de descanso do estudante, retorna se ele está cansado ou descansado;
-     * @return status geral descrevendo a situação do estudante como cansado ou descansado;
+     * Após o cálculo da média geral de descanso do estudante, retorna se ele está cansado ou descansado.
+     * @return status geral descrevendo a situação do estudante como cansado ou descansado.
      */
     public String getStatusGeral() {
         if (numeroSemanas == 0) {

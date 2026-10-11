@@ -8,8 +8,8 @@ public class RegistroResumos {
     String[] conteudos;
 
     /**
-     * Cria e inicializa o objeto registro de resumos;
-     * @param numeroDeResumos define a quantidade maxima de resumos que podem ser cadastrados;
+     * Cria e inicializa o objeto registro de resumos.
+     * @param numeroDeResumos define a quantidade maxima de resumos que podem ser cadastrados.
      */
     public RegistroResumos(int numeroDeResumos) {
         this.numero = numeroDeResumos;
@@ -18,9 +18,9 @@ public class RegistroResumos {
     }
 
     /**
-     * Adiciona um novo resumo na lista de resumos, caso o tema ja não esteja cadastrado;
-     * @param tema define o tema do resumo;
-     * @param conteudo define o conteudo do resumo;
+     * Adiciona um novo resumo na lista de resumos, caso o tema ja não esteja cadastrado.
+     * @param tema define o tema do resumo.
+     * @param conteudo define o conteudo do resumo.
      */
     public void adicionaResumo(String tema, String conteudo) {
         for (String i : this.temas) {
@@ -41,8 +41,8 @@ public class RegistroResumos {
     }
 
     /**
-     * Pega os resumos que foram cadastrados e junta o tema com o conteudo;
-     * @return retorna um vetor com os resumos cadastrados;
+     * Pega os resumos que foram cadastrados e junta o tema com o conteudo.
+     * @return retorna um vetor com os resumos cadastrados.
      */
     public String[] pegaResumos() {
         String[] resumos = new String[contaResumos()];
@@ -55,8 +55,8 @@ public class RegistroResumos {
     }
 
     /**
-     * Conta quantos resumos foram cadastrados no momento;
-     * @return retorna a quantidade de resumos cadastrados;
+     * Conta quantos resumos foram cadastrados no momento.
+     * @return retorna a quantidade de resumos cadastrados.
      */
     public int contaResumos() {
         int contador = 0;
@@ -70,9 +70,9 @@ public class RegistroResumos {
     }
 
     /**
-     * Verifica se existe algum resumo cadastrado com o tema informado;
-     * @param tema tema que sera procurado na lista de resumos;
-     * @return true se o tema existir e false caso não exista;
+     * Verifica se existe algum resumo cadastrado com o tema informado.
+     * @param tema tema que sera procurado na lista de resumos.
+     * @return true se o tema existir e false caso não exista.
      */
     public boolean temResumo(String tema) {
         for (String titulo : this.temas) {
@@ -87,8 +87,8 @@ public class RegistroResumos {
     }
 
     /**
-     * Transforma os resumos cadastrados em uma representação String;
-     * @return retorna uma String com a quantidade de resumos e seus respectivos temas;
+     * Transforma os resumos cadastrados em uma representação String.
+     * @return retorna uma String com a quantidade de resumos e seus respectivos temas.
      */
     public String imprimeResumos() {
         String resumos = "";
@@ -107,8 +107,8 @@ public class RegistroResumos {
     /**
      * por intermédio de uma chave de busca, encontra em uma lista as frase que possuem a chave
      * e adiciona os temas dessas frases a uma nova lista de temas.
-     * @param chaveDeBusca palavra chave que será usada
-     * @return lista de temas encontrados organizados em ordem alfabetica
+     * @param chaveDeBusca palavra chave que será usada.
+     * @return lista de temas encontrados organizados em ordem alfabetica.
      */
     public String[] busca(String chaveDeBusca) {
         ArrayList<String> temasBuscados = new ArrayList<>();

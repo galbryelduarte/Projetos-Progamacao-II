@@ -6,9 +6,9 @@ public class RegistroTempoOnline {
     int metaTempoOnline;
 
     /**
-     * Cria e inicializa um objeto com o nome da disciplina e o tempo online esperado nela;
-     * @param nomeDisciplina nome da disciplina;
-     * @param tempoOnlineEsperado tempo online esperado nela;
+     * Cria e inicializa um objeto com o nome da disciplina e o tempo online esperado nela.
+     * @param nomeDisciplina nome da disciplina.
+     * @param tempoOnlineEsperado tempo online esperado nela.
      */
     public RegistroTempoOnline (String nomeDisciplina, int tempoOnlineEsperado) {
         this.disciplina = nomeDisciplina;
@@ -16,8 +16,8 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Cria e inicializa um objeto com o nome da disciplina e o tempo online esperado padrao de 120 horas;
-     * @param nomeDisciplina nome da disciplina;
+     * Cria e inicializa um objeto com o nome da disciplina e o tempo online esperado padrao de 120 horas.
+     * @param nomeDisciplina nome da disciplina.
      */
     public RegistroTempoOnline (String nomeDisciplina) {
         this.disciplina = nomeDisciplina;
@@ -25,15 +25,15 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Soma horas a variável tempoOnline;
-     * @param tempo inteiro que representa horas a serem somadas ao tempo ja registrado;
+     * Soma horas a variável tempoOnline.
+     * @param tempo inteiro que representa horas a serem somadas ao tempo ja registrado.
      */
     public void adicionaTempoOnline(int tempo) {
         tempoOnline += tempo;
     }
 
     /**
-     * Metodo que verifica se o tempo online registrado já ultrapassou a meta de tempo online;
+     * Metodo que verifica se o tempo online registrado já ultrapassou a meta de tempo online.
      * @return 'true' se atingiu ou ja ultrapassou e 'false' se ainda nao ultrapassaou.
      */
     public boolean atingiuMetaTempoOnline() {
@@ -44,7 +44,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Transforma as variavéis do objeto em string;
+     * Transforma as variavéis do objeto em string.
      * @return retorna uma representação textual das informações do objeto.
      */
     public String toString() {

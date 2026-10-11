@@ -10,12 +10,18 @@ public class Disciplina {
     double[] notas;
     int[] pesos;
     /**
-     * Cria e inicializa o objeto disciplina;
-     * @param nomeDisciplina o nome da disciplina;
+     * Cria e inicializa o objeto disciplina que recebe apenas o nome dela.
+     * @param nomeDisciplina o nome da disciplina.
      */
     public Disciplina (String nomeDisciplina) {
         this.disciplina = nomeDisciplina;
     }
+
+    /**
+     * Cria e inicializa o objeto disciplina que recebe nome e notas.
+     * @param nome o nome da disciplina.
+     * @param numeroNotas número de notas que será registradas.
+     */
 
     public Disciplina (String nome, int numeroNotas) {
         this.disciplina = nome;
@@ -25,6 +31,12 @@ public class Disciplina {
             this.pesos[i] = 1;
         }
     }
+    /**
+     * Cria e inicializa o objeto disciplina com nome da disciplina, numero de notas e pesos para notas.
+     * @param nome o nome da disciplina.
+     * @param numeroNotas número de notas que será registradas.
+     * @param pesos lista de inteiros que representa o peso de cada nota.
+     */
 
     public Disciplina (String nome, int numeroNotas, int[] pesos) {
         this.disciplina = nome;
@@ -33,17 +45,17 @@ public class Disciplina {
     }
 
     /**
-     * Soma horas ao total ja acumulado;
-     * @param horasAcrescentar inteiro que será somado ao total ja acumulado;
+     * Soma horas ao total ja acumulado.
+     * @param horasAcrescentar inteiro que será somado ao total ja acumulado.
      */
     public void cadastraHoras(int horasAcrescentar) {
         horas += horasAcrescentar;
     }
 
     /**
-     * dado a opção, cadastra as notas no espaco adequado definido pela opção;
-     * @param nota inteiro que define qual nota será alterada;
-     * @param valorNota double que representa o valor da nota em si a ser acrescentada;
+     * dado a opção, cadastra as notas no espaco adequado definido pela opção.
+     * @param nota inteiro que define qual nota será alterada.
+     * @param valorNota double que representa o valor da nota em si a ser acrescentada.
      */
     public void cadastraNota(int nota, double valorNota) {
         if (notas == null) {
@@ -63,8 +75,8 @@ public class Disciplina {
         }
     }
     /**
-     * calcula a media do estudante de acordo com o tipo de disciplina;
-     * @return a media do estudante;
+     * calcula a media do estudante de acordo com o tipo de disciplina.
+     * @return a media do estudante.
      */
     private double calcularMedia() {
         double media = 0;
@@ -90,16 +102,16 @@ public class Disciplina {
     }
 
     /**
-     * verifica se a media do estudante é o suficiente pra aprovação;
-     * @return true ou false dependendo se a nota é maior igual ou menor que 7.0;
+     * verifica se a media do estudante é o suficiente pra aprovação.
+     * @return true ou false dependendo se a nota é maior igual ou menor que 7.0.
      */
     public boolean aprovado() {
         return calcularMedia() >= 7.0;
     }
 
     /**
-     * metodo que transforma as informações do objeto como nome da disciplina, horas, media e notas em representação String;
-     * @return as informações do objeto como String;
+     * metodo que transforma as informações do objeto como nome da disciplina, horas, media e notas em representação String.
+     * @return as informações do objeto como String.
      */
     public String toString() {
         if (notas == null) {
