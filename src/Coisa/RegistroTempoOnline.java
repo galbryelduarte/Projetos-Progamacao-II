@@ -1,9 +1,9 @@
 package Coisa;
 
 public class RegistroTempoOnline {
-    String disciplina;
-    int tempoOnline = 0;
-    int metaTempoOnline;
+    private String disciplina;
+    private int tempoOnline = 0;
+    private int metaTempoOnline;
 
     /**
      * Cria e inicializa um objeto com o nome da disciplina e o tempo online esperado nela.

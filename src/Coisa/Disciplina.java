@@ -1,14 +1,14 @@
 package Coisa;
 
 public class Disciplina {
-    String disciplina;
-    int horas = 0;
-    double nota1;
-    double nota2;
-    double nota3;
-    double nota4;
-    double[] notas;
-    int[] pesos;
+    private String disciplina;
+    private int horas = 0;
+    private double nota1;
+    private double nota2;
+    private double nota3;
+    private double nota4;
+    private double[] notas;
+    private int[] pesos;
     /**
      * Cria e inicializa o objeto disciplina que recebe apenas o nome dela.
      * @param nomeDisciplina o nome da disciplina.

@@ -2,10 +2,10 @@ package Coisa;
 import java.util.ArrayList;
 
 public class RegistroResumos {
-    int numero;
-    int indice;
-    String[] temas;
-    String[] conteudos;
+    private int numero;
+    private int indice;
+    private String[] temas;
+    private String[] conteudos;
 
     /**
      * Cria e inicializa o objeto registro de resumos.
@@ -19,6 +19,12 @@ public class RegistroResumos {
 
     /**
      * Adiciona um novo resumo na lista de resumos, caso o tema ja não esteja cadastrado.
+     *
+     *
+     *
+     *
+     *
+     *
      * @param tema define o tema do resumo.
      * @param conteudo define o conteudo do resumo.
      */

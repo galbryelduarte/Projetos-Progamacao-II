@@ -1,8 +1,8 @@
 package Coisa;
 
 public class Descanso {
-    int horasDescanso;
-    int numeroSemanas;
+    private int horasDescanso;
+    private int numeroSemanas;
 
     /**
      * Recebe um inteiro e o usa pra atualizar as horas de descanso nela.
