@@ -1,0 +1,49 @@
+Main
+association Exercicio, Programa
+---
+---
++ main (args: String[]): void
+---
+
+Exercicio
+association Programa
+---
+- nome: String
+- gasto: int
+- popularidade: int
+---
++ Exercicio (nome: String, gasto: int)
++ obterGastoCalorico(int: horas): int
++ atualizarPopularidade(): void
++ getPopularidade(): int
++ equals(): boolean
++ hashCode(): int
++ toString(): String
+---
+
+Programa
+composes Avaliacao
+---
+- objetivo: String
+- serieDeExercicios: Exercicio[] // limitado a 5
+- avaliacoes: Avaliacao[] // sem limites
+---
++ Programa (objetivo: String)
++ adicionarExercicio (exercicio: Exercicio): boolean
++ adicionarExercicio (exercicio: Exercicio, dia: int): boolean
++ obterGastOCaloricoTotal(): int
++ adicionarAvaliacao (avaliacao: Avaliacao): boolean
++ getMediaAvaliacoes(): double
++ getAvaliacoes(): String
++ toString(): String
+---
+
+Avaliacao
+---
+- nota: int;
+- comentario: String;
+---
++ Avaliacao (nota: int, comentario: String)
++ getNota(): int
++ toString(): String
+---
