@@ -129,9 +129,10 @@ public class SGHA {
     }
 
     public void finalizarDesafio(int idDesafio) {
-        if (this.desafios[idDesafio-1] != null) {
-            this.desafios[idDesafio-1].setStatus("Concluído");
+        if (this.desafios[idDesafio] == null) {
+            throw new IllegalArgumentException("Essa posição não tem desafio cadastrado");
         }
+            this.desafios[idDesafio-1].setStatus("Concluído");
     }
 
     public ArrayList<Equipe> getEquipes() {
