@@ -21,7 +21,7 @@ public class Estudante {
         this.link = link;
     }
 
-    private void incrementaQuantidadeGrupos() {
+    public void incrementaQuantidadeGrupos() {
         this.quantidadeGruposParticipa++;
     }
 
@@ -32,6 +32,10 @@ public class Estudante {
                 return;
             }
         }
+    }
+
+    public String[] getDisciplinasInteresse() {
+        return disciplinasInteresse;
     }
 
     public String getMatricula() {
